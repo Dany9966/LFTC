@@ -149,7 +149,9 @@ int getNextToken(){
                 else if(nCh == 6 && !memcmp(pStartCh, "return", 6))
                     tk = addTk(RETURN);
                 else if(nCh == 6 && !memcmp(pStartCh, "struct", 6))
-                    tk = addTk(STRUCT);*/
+                    tk = addTk(STRUCT);//and so on
+					 * */
+				
         }
     }
 }
@@ -160,7 +162,7 @@ char inbuf[30001];
 int main(int argc, char **argv){
     safeAlloc(tokens);
     safeAlloc(lastToken);
-    
+
     char *pCh;
     FILE *f = fopen(argv[1], "r");
     int n = fread(inbuf, 1, 30000, f);
